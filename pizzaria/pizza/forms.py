@@ -1,6 +1,7 @@
 from django import forms
 from django.forms import fields, widgets
 from django.forms.forms import Form
+from django.forms.formsets import formset_factory
 from .models import Pizza, Size
 
 # class PizzaForm(forms.Form):
@@ -12,6 +13,8 @@ from .models import Pizza, Size
     
 
 class PizzaForm(forms.ModelForm):
+
+    email = forms.EmailField()
 
     class Meta:
         model = Pizza
